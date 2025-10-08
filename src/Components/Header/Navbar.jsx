@@ -12,10 +12,10 @@ const Navbar = () => {
         <NavLink to="/" className={({ isActive }) =>
             `mr-6 font-medium ${isActive ? 'active-link' : ''}`
         }><li className='font-medium'>Home</li></NavLink>
-        <NavLink to="/listed books" className={({ isActive }) =>
+        <NavLink to="/apps" className={({ isActive }) =>
             `mr-6 font-medium ${isActive ? 'active-link' : ''}`
         }><li className='font-medium'>Apps</li></NavLink>
-        <NavLink to="/about" className={({ isActive }) =>
+        <NavLink to="/installed apps" className={({ isActive }) =>
             isActive ? 'active-link' : ''
         }><li className='font-medium'>Installation</li></NavLink>
     </>

@@ -2,6 +2,7 @@ import React from 'react';
 import bannerImg from "../../assets/hero.png"
 import playStoreImg from "../../assets/playstore.png"
 import appStoreImg from "../../assets/appstore.png"
+import { NavLink } from 'react-router';
 
 
 const Banner = () => {
@@ -14,14 +15,16 @@ const Banner = () => {
                 <p className='my-8'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting. <br />
                     Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
                 <div className='flex justify-center gap-8 space-x-8 mb-8'>
-                    <div className='flex gap-2 btn btn-outline'>
+                    <NavLink to="https://play.google.com/store/games?device=windows&hl=en" target='_blank'
+                     className='flex gap-2 btn btn-outline cursor-pointer'>
                         <img src={playStoreImg} alt="" />
-                        <button className=''>Google Play</button>
-                    </div>
-                    <div className='flex gap-2 btn btn-outline'>
+                        <span className=''>Google Play</span>
+                    </NavLink>
+                    <NavLink to="https://www.apple.com/app-store/" target='_blank'
+                     className='flex gap-2 btn btn-outline cursor-pointer'>
                         <img src={appStoreImg} alt="" />
-                        <button className=''>App Store</button>
-                    </div>
+                        <span className=''>App Store</span>
+                    </NavLink>
 
                 </div>
                 <div className='flex justify-center'>

@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
             Component: Home
         },
         {
-            path: "/listed books",
+            path: "/apps",
             Component: ErrorPage
         }
     ]
