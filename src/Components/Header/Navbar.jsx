@@ -10,10 +10,10 @@ import "./Navbar.css"
 const Navbar = () => {
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) =>
-            isActive ? 'active-link' : ''
+            `mr-6 font-medium ${isActive ? 'active-link' : ''}`
         }><li className='font-medium'>Home</li></NavLink>
         <NavLink to="/listed books" className={({ isActive }) =>
-            `mx-6 font-medium ${isActive ? 'active-link' : ''}`
+            `mr-6 font-medium ${isActive ? 'active-link' : ''}`
         }><li className='font-medium'>Apps</li></NavLink>
         <NavLink to="/about" className={({ isActive }) =>
             isActive ? 'active-link' : ''
@@ -30,7 +30,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow space-y-3">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-24 p-2 shadow space-y-3">
                             {navLinks}
                         </ul>
                     </div>
