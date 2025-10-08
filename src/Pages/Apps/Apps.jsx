@@ -22,7 +22,7 @@ const Apps = () => {
                 </div>
 
                 <div className='text-center mt-10 mb-20'>
-                    <NavLink to="/apps" target='_blank' className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
+                    <NavLink to="/apps" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
                     <span className="text-center text-white font-medium">Show All</span></NavLink>
                 </div>
             </div>
