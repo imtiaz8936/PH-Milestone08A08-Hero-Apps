@@ -15,7 +15,7 @@ const Navbar = () => {
         <NavLink to="/apps" className={({ isActive }) =>
             `mr-6 font-medium ${isActive ? 'active-link' : ''}`
         }><li className='font-medium'>Apps</li></NavLink>
-        <NavLink to="/installed apps" className={({ isActive }) =>
+        <NavLink to="/app/installed" className={({ isActive }) =>
             isActive ? 'active-link' : ''
         }><li className='font-medium'>Installation</li></NavLink>
     </>
