@@ -1,34 +1,75 @@
 import React, { useState } from 'react';
 import { NavLink, useParams } from 'react-router';
 import useApps from '../../Hooks/useApps';
-// import downloadIcon from '../../assets/icon-downloads.png'
-// import starIcon from '../../assets/icon-ratings.png'
-// import reviewIcon from '../../assets/icon-review.png'
+import downloadIcon from '../../assets/icon-downloads.png'
+import starIcon from '../../assets/icon-ratings.png'
+import reviewIcon from '../../assets/icon-review.png'
 import { toast } from 'react-toastify';
 
 const AppDetails = () => {
-    // const { id } = useParams();
-    // const [isInstalled, setIsInstalled] = useState(false);
-    // const { apps, loading, error } = useApps();
-    // const foundApp = apps.find(app => app.id === Number(id));
-    // if (loading) return <p>Loading...</p>
-    // const { image, title, companyName, downloads, ratingAvg, reviews, size } = foundApp;
-    // const downloadsCount = (downloads / 1000000);
-    // const reviewsCount = (reviews / 1000);
+    const { id } = useParams();
+    const [isInstalled, setIsInstalled] = useState(false);
+    const { apps, loading, error } = useApps();
+    const foundApp = apps.find(app => app.id === Number(id));
+    if (loading) return <p>Loading...</p>
+    const { image, title, companyName, downloads, ratingAvg, reviews, size } = foundApp;
+    const downloadsCount = (downloads / 1000000);
+    const reviewsCount = (reviews / 1000);
     // console.log(foundApp);
     // const [installedApps, setInstalledApps] = useState([]);
 
-    // const handleClick = (id) => {
-    //     console.log(id);
-    //     setIsInstalled(true);
-    //     toast(`✅${title} App Installed Successfully`);
+    const handleClick = (id) => {
+        console.log(id);
+        setIsInstalled(true);
+        toast(`✅${title} App Installed Successfully`);
 
-    // }
+    }
     return (
         <div className='max-w-[1280px] mx-auto'>
             <h1 className='my-6 text-3xl text-purple-500 text-center'>App Details Page</h1>
 
-            
+            <div className='flex  gap-28'>
+                <img className='w-78 h-96 rounded-md' src={image} alt="" />
+                <div className='w-full space-y-10'>
+                    <div className='space-y-3'>
+                        <h1 className='font-bold text-3xl'>{title}</h1>
+                        <p className='font-medium text-xl'>Developed by <span className='text-[#9a65f0]'>{companyName}</span></p>
+                    </div>
+                    <hr />
+                    <div className='flex gap-18 items-center'>
+                        <div className='space-y-3'>
+                            <img src={downloadIcon} alt="" />
+                            <p>Downloads</p>
+                            <h1 className='font-extrabold text-4xl'>{downloadsCount}M</h1>
+                        </div>
+                        <div className='space-y-3'>
+                            <img src={starIcon} alt="" />
+                            <p>Average Ratings</p>
+                            <h1 className='font-extrabold text-4xl'>{ratingAvg}</h1>
+                        </div>
+                        <div className='space-y-3'>
+                            <img src={reviewIcon} alt="" />
+                            <p>Total Reviews</p>
+                            <h1 className='font-extrabold text-4xl'>{reviewsCount}K</h1>
+                        </div>
+                    </div>
+
+                    <div className='text-left mt-10 mb-20'>
+                        <button disabled={isInstalled} onClick={() => handleClick(Number(id))} className={`px-10 py-3 rounded-md bg-[#00d390] cursor-pointer 
+                            ${isInstalled ? 'text-black disabled:blur-[0.4px] disabled:opacity-[0.7] disabled:cursor-not-allowed'
+                                : 'text-white'}`}>
+                            <span className="text-center font-medium text-xl">
+                                {isInstalled ? 'Installed' : `Install Now (${size} MB)`}</span></button>
+                    </div>
+                </div>
+
+                <hr className='mt-12' />
+
+            </div>
+            <div className='text-center mt-10 mb-20'>
+                <NavLink to="/apps" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
+                    <span className="text-center text-white font-medium">Go Back</span></NavLink>
+            </div>
 
 
         </div>
