@@ -16,7 +16,8 @@ const AppDetails = () => {
     const isAddedToLocalStorage = loadInstalledApps().some(a => a.id === Number(id));
     console.log(isAddedToLocalStorage);
     if (loading) return <p>Loading...</p>
-    const { image, title, companyName, downloads, ratingAvg, reviews, size, ratings } = foundApp;
+    const { image, title, companyName, downloads,
+        ratingAvg, reviews, size, ratings, description } = foundApp;
     const downloadsCount = (downloads / 1000000);
     const reviewsCount = (reviews / 1000);
 
@@ -112,6 +113,11 @@ const AppDetails = () => {
                     </ResponsiveContainer>
 
                 </div>
+            </div>
+
+            <div className='space-y-3'>
+                <h1 className='font-bold text-2xl'>Description</h1>
+                <p>{description}</p>
             </div>
 
             <div className='text-center mt-16 mb-20'>
