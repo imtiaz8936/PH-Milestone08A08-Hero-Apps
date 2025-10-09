@@ -29,9 +29,7 @@ const AppDetails = () => {
     }
     return (
         <div className='max-w-[1280px] mx-auto'>
-            <h1 className='my-6 text-3xl text-purple-500 text-center'>App Details Page</h1>
-
-            <div className='flex gap-28'>
+            <div className='flex gap-28 mt-16'>
                 <img className='w-78 h-96 rounded-md' src={image} alt="" />
                 <div className='w-full space-y-10'>
                     <div className='space-y-3'>
@@ -57,7 +55,7 @@ const AppDetails = () => {
                         </div>
                     </div>
 
-                    <div className='text-left mt-10 mb-20'>
+                    <div className='text-left my-10'>
                         <button disabled={isInstalled || isAddedToLocalStorage} onClick={() => handleClick(foundApp)} className={`px-10 py-3 rounded-md bg-[#00d390] cursor-pointer 
                             ${isInstalled || isAddedToLocalStorage ? 'text-black disabled:blur-[0.4px] disabled:opacity-[0.7]'
                                 : 'text-white'}`}>
@@ -65,7 +63,6 @@ const AppDetails = () => {
                                 {isInstalled || isAddedToLocalStorage ? 'Installed' : `Install Now (${size} MB)`}</span></button>
                     </div>
                 </div>
-
             </div>
             <hr className='' />
             <div className='text-center mt-16 mb-20'>

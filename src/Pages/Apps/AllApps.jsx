@@ -50,7 +50,7 @@ const AllApps = () => {
                     }
                 </div>
 
-                <div className='text-center mt-10 mb-20'>
+                <div className='text-center mt-16 mb-20'>
                     <NavLink to="/" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
                         <span className="text-center text-white font-medium">Go to Home</span></NavLink>
                 </div>

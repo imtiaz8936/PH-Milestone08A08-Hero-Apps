@@ -3,7 +3,7 @@ import React from 'react';
 const App = ({app}) => {
     // console.log(app);
     const {image, title, downloads, ratingAvg} = app;
-    const downloadsCount = (downloads / 1000000).toFixed(1);
+    const downloadsCount = (downloads / 1000000);
     return (
         <div>
             <div className='rounded-md p-2 shadow-md w-78 bg-white'>

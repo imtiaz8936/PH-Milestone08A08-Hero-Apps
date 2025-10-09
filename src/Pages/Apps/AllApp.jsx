@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const AllApp = ({ app }) => {
     const { image, title, downloads, ratingAvg, id } = app;
-    const downloadsCount = (downloads / 1000000).toFixed(1);
+    const downloadsCount = (downloads / 1000000);
 
     // const handleAppDetails = () => {
     //     console.log("app clicked");
