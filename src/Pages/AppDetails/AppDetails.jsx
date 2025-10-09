@@ -6,7 +6,8 @@ import starIcon from '../../assets/icon-ratings.png'
 import reviewIcon from '../../assets/icon-review.png'
 import { toast } from 'react-toastify';
 import { installApp, loadInstalledApps } from '../../Utils/localStorage';
-
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import './AppDetails.css'
 const AppDetails = () => {
     const { id } = useParams();
     const [isInstalled, setIsInstalled] = useState(false);
@@ -15,7 +16,7 @@ const AppDetails = () => {
     const isAddedToLocalStorage = loadInstalledApps().some(a => a.id === Number(id));
     console.log(isAddedToLocalStorage);
     if (loading) return <p>Loading...</p>
-    const { image, title, companyName, downloads, ratingAvg, reviews, size } = foundApp;
+    const { image, title, companyName, downloads, ratingAvg, reviews, size, ratings } = foundApp;
     const downloadsCount = (downloads / 1000000);
     const reviewsCount = (reviews / 1000);
 
@@ -65,12 +66,58 @@ const AppDetails = () => {
                 </div>
             </div>
             <hr className='' />
+
+
+            <div className='my-16 space-y-3'>
+                <h1 className='font-bold text-2xl'>Ratings</h1>
+                <div className=' border rounded-xl p-4'>
+
+                    <ResponsiveContainer width="100%" height={300} style={{ outline: "none" }}>
+                        <BarChart
+                            data={ratings}
+                            layout="vertical"
+                            margin={{
+                                top: 5,
+                                right: 30,
+                                left: 60,
+                                bottom: 5,
+                            }}
+                            barSize={20}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+
+                            <XAxis
+                                type="number"
+                                domain={[0, 'dataMax']}
+                                tickCount={6}
+                                allowDecimals={false}
+                            />
+
+                            <YAxis
+                                type="category"
+                                dataKey="name"
+                                width={80}
+                            />
+
+                            <Tooltip />
+                            <Legend />
+
+                            <Bar
+                                dataKey="count"
+                                fill="#ff8811"
+                                activeBar={{ fill: "#4f46e5" }}
+                                radius={[0, 4, 4, 0]}
+                            />
+                        </BarChart>
+                    </ResponsiveContainer>
+
+                </div>
+            </div>
+
             <div className='text-center mt-16 mb-20'>
                 <NavLink to="/apps" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
                     <span className="text-center text-white font-medium">Go Back</span></NavLink>
             </div>
-
-
         </div>
     );
 };
