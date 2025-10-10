@@ -430,24 +430,6 @@
       { "name": "4 star", "count": 2000000 },
       { "name": "5 star", "count": 8700000 }
     ]
-  },
-  {
-    "image": "https://i.ibb.co.com/DDbTh4pF/facebook-logo-vector-eps-file-squared-coloured-easily-editable-have-white-background-high-resolution.webp",
-    "title": "Google Photos",
-    "companyName": "Google LLC",
-    "id": 25,
-    "description": "Google Photos is a smart photo management app that automatically backs up and organizes your pictures and videos. Using advanced AI, it recognizes faces, locations, and objects for easy searching. The app creates automatic albums, collages, and animations from your media. With shared albums, friends and family can contribute photos collaboratively. Google Photos offers powerful editing tools and filters for quick enhancements. It ensures all your memories are safe in the cloud and accessible from any device. The app also helps free up storage by safely backing up media online. With seamless integration across Android, iOS, and web, Google Photos makes preserving and revisiting your favorite moments effortless and enjoyable.",
-    "size": 130,
-    "reviews": 9000000,
-    "ratingAvg": 4.6,
-    "downloads": 5000000000,
-    "ratings": [
-      { "name": "1 star", "count": 400000 },
-      { "name": "2 star", "count": 600000 },
-      { "name": "3 star", "count": 900000 },
-      { "name": "4 star", "count": 2000000 },
-      { "name": "5 star", "count": 5100000 }
-    ]
   }
 ]
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useApps from '../../Hooks/useApps';
 import AllApp from './AllApp';
 import { NavLink } from 'react-router';
+import AppError from './AppError';
+
 
 const AllApps = () => {
     const { apps } = useApps();
@@ -16,10 +18,10 @@ const AllApps = () => {
             <div className='max-w-[1280px] mx-auto'>
                 <div className='text-center my-20'>
                     <h1 className='font-bold text-5xl mb-4'>Our All Application</h1>
-                    <p className='text-[#939fa9] text-xl'>Explore All Apps on the Market developed by us. We code for Millions</p>
+                    <p className='text-[#939fa9] text-xl p-3 lg:p-0'>Explore All Apps on the Market developed by us. We code for Millions</p>
                 </div>
 
-                <div className='flex justify-between items-center mb-6'>
+                <div className='flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between items-center space-y-4 px-0 md:p-4 mb-6'>
                     <div>
                         <h1 className='font-bold text-2xl'>({searchedApps.length})Apps Found</h1>
                     </div>
@@ -44,15 +46,23 @@ const AllApps = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-                    {
-                        searchedApps.map(app => <AllApp key={app.id} app={app}></AllApp>)
-                    }
-                </div>
+                {
+                    searchedApps.length ?
+                        <div className='grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 md:gap-x-0 lg:grid-cols-4'>
+                            {
+                                searchedApps.map(app => <AllApp key={app.id} app={app}></AllApp>)
+                            }
+                        </div> : <AppError></AppError>
+                }
 
                 <div className='text-center mt-16 mb-20'>
-                    <NavLink to="/" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
-                        <span className="text-center text-white font-medium">Go to Home</span></NavLink>
+                    {
+                        searchedApps.length ?
+                            <NavLink to="/" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
+                                <span className="text-center text-white font-medium">Go to Home</span></NavLink>
+                            : <NavLink to="/apps" onClick={() => setSearch('')} className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
+                                <span className="text-center text-white font-medium">Go Back</span></NavLink>
+                    }
                 </div>
             </div>
         </div>

@@ -10,14 +10,14 @@ import "./Navbar.css"
 const Navbar = () => {
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) =>
-            `mr-6 font-medium ${isActive ? 'active-link' : ''}`
-        }><li className='font-medium'>Home</li></NavLink>
+            `mr-6 font-medium text-[18px] ${isActive ? 'active-link' : ''}`
+        }><li className='font-medium text-[18px]'>Home</li></NavLink>
         <NavLink to="/apps" className={({ isActive }) =>
-            `mr-6 font-medium ${isActive ? 'active-link' : ''}`
-        }><li className='font-medium'>Apps</li></NavLink>
+            `mr-6 font-medium text-[18px] ${isActive ? 'active-link' : ''}`
+        }><li className='font-medium text-[18px]'>Apps</li></NavLink>
         <NavLink to="/app/installed" className={({ isActive }) =>
-            isActive ? 'active-link' : ''
-        }><li className='font-medium'>Installation</li></NavLink>
+            `mr-6 font-medium text-[18px] ${isActive ? 'active-link' : ''}`
+        }><li className='font-medium text-[18px]'>Installation</li></NavLink>
     </>
 
     return (
@@ -30,12 +30,12 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-24 p-2 shadow space-y-3">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-30 p-2 shadow space-y-3">
                             {navLinks}
                         </ul>
                     </div>
                     <NavLink to="/" className="flex gap-2 items-center"><img className='w-10 h-10' src={logoImg} alt="" />
-                        <span className='text-[#9a65f0] font-bold'>HERO.IO</span></NavLink>
+                        <span className='text-[#9a65f0] font-bold text-xl'>HERO.IO</span></NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

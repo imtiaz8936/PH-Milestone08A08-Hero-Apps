@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { loadInstalledApps } from '../../Utils/localStorage';
 import ShowInstalledApps from './ShowInstalledApps';
+import { NavLink } from 'react-router';
 
 const InstalledApps = () => {
     const [installedApps, setInstalledApps] = useState(() => loadInstalledApps())
@@ -24,7 +25,7 @@ const InstalledApps = () => {
                 <p className='text-[#939fa9] text-xl'>Explore All Trending Apps on the Market developed by us</p>
             </div>
 
-            <div className='flex justify-between items-center mb-6'>
+            <div className='flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between items-center space-y-4 px-0 md:p-4 mb-6'>
                 <div>
                     <h1 className='font-bold text-2xl'>({installedApps.length})Apps Found</h1>
                 </div>
@@ -43,7 +44,7 @@ const InstalledApps = () => {
 
             </div>
 
-            <div className='w-full space-y-4 mb-20'>
+            <div className='w-full space-y-4 px-3 md:px-0 lg:px-0 mb-20'>
                 {
                     sortedApps.length ?
                         sortedApps.map(app => <ShowInstalledApps key={app.id} app={app} setInstalledApps={setInstalledApps}></ShowInstalledApps>)
@@ -51,6 +52,11 @@ const InstalledApps = () => {
                             <p className='text-[#939fa9] font-bold text-5xl'>No Installation Done Yet</p>
                         </div>
                 }
+            </div>
+
+            <div className='text-center mt-16 mb-20'>
+                <NavLink to="/apps" className="px-10 py-3 rounded-md bg-[linear-gradient(125.07deg,rgba(99,46,227,1),rgba(159,98,242,1)_100%)]" >
+                    <span className="text-center text-white font-medium">Go Back</span></NavLink>
             </div>
 
         </div>

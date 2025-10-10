@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className="max-w-[1280px] mx-auto footer flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between text-white p-10">
                 <nav>
                     <NavLink to="/" className="flex gap-2 items-center mb-2"><img className='w-10 h-10' src={logoImg} alt="" />
-                        <span className='text-[#9a65f0] font-bold'>HERO.IO</span></NavLink>
+                        <span className='text-[#9a65f0] font-bold text-xl'>HERO.IO</span></NavLink>
                     <p className='font-medium text-lg'>Providing reliable apps since 2004</p>
                 </nav>
                 <nav>

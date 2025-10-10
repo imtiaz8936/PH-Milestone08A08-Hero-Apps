@@ -15,7 +15,7 @@ const Apps = () => {
                     <p className='text-[#939fa9] text-xl'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+                <div className='grid grid-cols-1 place-items-center gap-4 md:grid-cols-2 md:gap-x-0 lg:grid-cols-4 '>
                     {
                         applications.map(app => <App key={app.id} app={app}></App>)
                     }
