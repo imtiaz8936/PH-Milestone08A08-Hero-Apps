@@ -5,11 +5,6 @@ const AllApp = ({ app }) => {
     const { image, title, downloads, ratingAvg, id } = app;
     const downloadsCount = (downloads / 1000000);
 
-    // const handleAppDetails = () => {
-    //     console.log("app clicked");
-
-    // }
-
     return (
         <div>
             <Link to={`/app/${id}`}>

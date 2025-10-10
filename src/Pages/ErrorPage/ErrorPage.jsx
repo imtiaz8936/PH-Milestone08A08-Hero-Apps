@@ -8,9 +8,6 @@ import Footer from '../../Components/Footer/Footer';
 
 const ErrorPage = ({ message }) => {
 
-    // const error = useRouteError();
-    console.log(message);
-
     return (
         <div>
             {

@@ -75,56 +75,50 @@ const AppDetails = () => {
                         <hr />
 
                         <div className='px-4 md:px-4 lg:px-0'>
-                        <div className='my-16 space-y-3'>
-                            <h1 className='font-bold text-2xl'>Ratings</h1>
-                            <div className=' border rounded-xl p-4'>
+                            <div className='my-16 space-y-3'>
+                                <h1 className='font-bold text-2xl'>Ratings</h1>
+                                <div className=' border rounded-xl p-4'>
 
-                                <ResponsiveContainer width="100%" height={300} style={{ outline: "none" }}>
-                                    <BarChart
-                                        data={ratings}
-                                        layout="vertical"
-                                        margin={{
-                                            top: 5,
-                                            right: 30,
-                                            left: 60,
-                                            bottom: 5,
-                                        }}
-                                        barSize={20}
-                                    >
-                                        <CartesianGrid strokeDasharray="3 3" />
+                                    <ResponsiveContainer width="100%" height={300} style={{ outline: "none" }}>
+                                        <BarChart
+                                            data={ratings}
+                                            layout="vertical"
+                                            barSize={20}
+                                        >
+                                            <CartesianGrid strokeDasharray="3 3" />
 
-                                        <XAxis
-                                            type="number"
-                                            domain={[0, 'dataMax']}
-                                            tickCount={6}
-                                            allowDecimals={false}
-                                        />
+                                            <XAxis
+                                                type="number"
+                                                domain={[0, 'dataMax']}
+                                                tickCount={6}
+                                                allowDecimals={false}
+                                            />
 
-                                        <YAxis
-                                            type="category"
-                                            dataKey="name"
-                                            width={80}
-                                        />
+                                            <YAxis
+                                                type="category"
+                                                dataKey="name"
+                                                width={80}
+                                            />
 
-                                        <Tooltip />
-                                        <Legend />
+                                            <Tooltip />
+                                            <Legend />
 
-                                        <Bar
-                                            dataKey="count"
-                                            fill="#ff8811"
-                                            activeBar={{ fill: "#4f46e5" }}
-                                            radius={[0, 4, 4, 0]}
-                                        />
-                                    </BarChart>
-                                </ResponsiveContainer>
+                                            <Bar
+                                                dataKey="count"
+                                                fill="#ff8811"
+                                                activeBar={{ fill: "#4f46e5" }}
+                                                radius={[0, 4, 4, 0]}
+                                            />
+                                        </BarChart>
+                                    </ResponsiveContainer>
 
+                                </div>
                             </div>
-                        </div>
 
-                        <div className='space-y-3'>
-                            <h1 className='font-bold text-2xl'>Description</h1>
-                            <p>{description}</p>
-                        </div>
+                            <div className='space-y-3'>
+                                <h1 className='font-bold text-2xl'>Description</h1>
+                                <p>{description}</p>
+                            </div>
                         </div>
 
                         <div className='text-center mt-16 mb-20'>

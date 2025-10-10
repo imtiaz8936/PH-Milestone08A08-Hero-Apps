@@ -2,7 +2,7 @@ import React from 'react';
 import appErrorImg from '../../assets/App-Error.png'
 const AppError = () => {
     return (
-        <div className='flex flex-col items-center'>
+        <div className='flex flex-col items-center px-3 md:px-0 lg:px-0'>
             <img src={appErrorImg} alt="" />
             <div className='space-y-3 mt-10 text-center'>
                 <h1 className='font-semibold text-5xl'>OOPS!!! APP NOT FOUND</h1>

@@ -4,7 +4,6 @@ import { NavLink } from 'react-router';
 
 const Footer = () => {
     return (
-        // Footer Section
         <div className='bg-[#001931]'>
             <footer className="max-w-[1280px] mx-auto footer flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between text-white p-10">
                 <nav>

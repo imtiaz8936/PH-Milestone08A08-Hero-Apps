@@ -1,8 +1,7 @@
 import React from 'react';
 
-const App = ({app}) => {
-    // console.log(app);
-    const {image, title, downloads, ratingAvg} = app;
+const App = ({ app }) => {
+    const { image, title, downloads, ratingAvg } = app;
     const downloadsCount = (downloads / 1000000);
     return (
         <div>

@@ -1,6 +1,7 @@
-
+import React from 'react';
 import { toast } from 'react-toastify';
 import { loadInstalledApps, uninstallApp } from '../../Utils/localStorage';
+
 
 const ShowInstalledApps = ({ app, setInstalledApps }) => {
 
@@ -13,7 +14,7 @@ const ShowInstalledApps = ({ app, setInstalledApps }) => {
     }
     return (
         <div className='flex justify-between items-center p-4 shadow-md bg-white rounded-md'>
-            <div className='flex gap-10 items-center'>
+            <div className='flex gap-4 md:gap-6 lg:gap-10 items-center'>
                 <img className='w-20 h-24 md:h-20 lg:h-20 rounded-md' src={image} alt="" />
                 <div className='space-y-1 md:space-y-3 lg:space-y-3'>
                     <h1 className='font-medium text-xl'>{title}</h1>
@@ -24,7 +25,7 @@ const ShowInstalledApps = ({ app, setInstalledApps }) => {
                     </div>
                 </div>
             </div>
-            <button className='rounded-md bg-[#00d390] cursor-pointer text-white font-medium text-xl px-6 py-3'
+            <button className='rounded-md bg-[#00d390] cursor-pointer text-white font-medium text-[16px] md:text-xl lg:text-xl px-2 py-2 md:px-4 lg:px-6 md:py-3 lg:py-3'
                 onClick={() => handleUninstallApp(id)}>
                 Uninstall
             </button>

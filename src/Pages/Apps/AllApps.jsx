@@ -18,7 +18,7 @@ const AllApps = () => {
             <div className='max-w-[1280px] mx-auto'>
                 <div className='text-center my-20'>
                     <h1 className='font-bold text-5xl mb-4'>Our All Application</h1>
-                    <p className='text-[#939fa9] text-xl p-3 lg:p-0'>Explore All Apps on the Market developed by us. We code for Millions</p>
+                    <p className='text-[#939fa9] text-xl px-3 md:px-0 lg:px-0'>Explore All Apps on the Market developed by us. We code for Millions</p>
                 </div>
 
                 <div className='flex flex-col md:flex-row md:justify-between lg:flex-row lg:justify-between items-center space-y-4 px-0 md:p-4 mb-6'>
