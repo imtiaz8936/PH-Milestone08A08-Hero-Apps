@@ -5,8 +5,6 @@ import githubImg from "../../assets/github.png"
 import "./Navbar.css"
 
 
-
-// Navbar Section
 const Navbar = () => {
     const navLinks = <>
         <NavLink to="/" className={({ isActive }) =>
