@@ -12,7 +12,7 @@ const AllApp = ({ app }) => {
 
     return (
         <div>
-            <Link to={`/apps/${id}`}>
+            <Link to={`/app/${id}`}>
                 <div className='rounded-md p-2 shadow-md w-78 bg-white cursor-pointer hover:scale-105 transition ease-in-out'>
                     <img className='w-78 h-78 rounded-md' src={image} alt="" />
                     <h1 className='font-medium text-xl my-3'>{title}</h1>

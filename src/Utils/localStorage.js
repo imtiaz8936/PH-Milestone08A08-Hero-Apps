@@ -1,4 +1,4 @@
-// get
+
 export const loadInstalledApps = () => {
     try {
         const data = localStorage.getItem('apps')
@@ -9,13 +9,10 @@ export const loadInstalledApps = () => {
     }
 }
 
-// save
 export const installApp = (app) => {
     const installedApps = loadInstalledApps()
 
     try {
-        // const isDuplicate = installedApps.some(p => p.id === app.id)
-        // if (isDuplicate) return alert('Already added in localStorage')
         const updatedAppsList = [...installedApps, app]
         localStorage.setItem('apps', JSON.stringify(updatedAppsList))
     } catch (err) {
@@ -23,7 +20,6 @@ export const installApp = (app) => {
     }
 }
 
-// delete
 export const uninstallApp = id => {
     const installedApps = loadInstalledApps()
     try {

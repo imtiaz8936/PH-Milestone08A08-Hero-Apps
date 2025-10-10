@@ -9,6 +9,7 @@ import { installApp, loadInstalledApps } from '../../Utils/localStorage';
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import './AppDetails.css'
 import ErrorPage from '../ErrorPage/ErrorPage';
+import LoadingSpinner from '../../Components/LoadingSpinner/LoadingSpinner';
 const AppDetails = () => {
     const { id } = useParams();
     const [isInstalled, setIsInstalled] = useState(false);
@@ -17,7 +18,7 @@ const AppDetails = () => {
     console.log(foundApp);
     const isAddedToLocalStorage = loadInstalledApps().some(a => a.id === Number(id));
     // console.log(isAddedToLocalStorage);
-    if (loading) return <p>Loading...</p>
+    if (loading) return <LoadingSpinner></LoadingSpinner>
     const { image, title, companyName, downloads,
         ratingAvg, reviews, size, ratings, description } = foundApp || {};
     const downloadsCount = (downloads / 1000000);
